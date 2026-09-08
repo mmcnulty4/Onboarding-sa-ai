@@ -916,19 +916,20 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
 <section class="sec" id="playbooks">
   <div class="sec-kicker">Repeatable method</div>
   <h2 class="sec-h2">Playbooks</h2>
-  <p class="sec-intro">Four workflows you will run repeatedly. The method is here; <strong>the facts are in the authenticated systems.</strong> Nothing client-specific lives on this page — that's deliberate, and it's also the correct working habit: reconstruct from source every time rather than trusting a summary someone wrote weeks ago.</p>
+  <p class="sec-intro">Four jobs, in the order you'll actually hit them: <strong>get up to speed on an account, prepare for the meeting, log what came out of it, and scope anything new through the Cartographer.</strong> Almost everything you do in your first month is one of these four. The method is here; the facts are in the authenticated systems.</p>
+  <p class="sec-intro" style="margin-top:-28px">One thing to understand before you start. <strong>The accounts you're inheriting mostly predate the Cartographer</strong> — they were scoped before it existed, so there's no audit, no scope ledger, and no structured recommendation sitting behind them. That's why jobs 1 to 3 carry the weight on transferred work: you reconstruct the scope that was never formally mapped, and you keep meetings and follow-up tight enough that the gap doesn't compound. Job 4 is the opposite case, and the rule there is absolute: <strong>any new scope goes through the Cartographer.</strong></p>
 
   <div class="pb-tabs" id="pb-tabs">
-    <button class="pb-tab on" data-pane="pb-recon">Account reconstruction</button>
-    <button class="pb-tab" data-pane="pb-prep">Meeting prep</button>
-    <button class="pb-tab" data-pane="pb-cal">Post-meeting calibration</button>
-    <button class="pb-tab" data-pane="pb-hand">Handoff standard</button>
+    <button class="pb-tab on" data-pane="pb-recon">1 · Get up to speed</button>
+    <button class="pb-tab" data-pane="pb-prep">2 · Prepare for a meeting</button>
+    <button class="pb-tab" data-pane="pb-cal">3 · After the meeting</button>
+    <button class="pb-tab" data-pane="pb-scope">4 · Scope new work</button>
   </div>
 
   <!-- ---- RECONSTRUCTION ---- -->
   <div class="pb-pane on" id="pb-recon">
-    <div class="eyebrow g">Playbook 01 — use this on every account you inherit</div>
-    <h3 class="sub-h3" style="font-size:26px">Reconstructing an unfamiliar account</h3>
+    <div class="eyebrow g">Job 1 — every account you inherit, before you touch anything</div>
+    <h3 class="sub-h3" style="font-size:26px">Get up to speed on an account</h3>
     <p class="q-b" style="max-width:720px; margin-bottom:32px">An inventory tells you what exists. It does not tell you whether the build is coherent, whether it's finished, or whether the client will get what they asked for. Those questions need <strong>intent</strong>, and intent is not stored in the CRM — it's in the dated engagement record. Join the two on time and attribution and an orphan field list becomes a traceable response to a stated requirement, built by a specific person, in a specific week. That join is the whole method.</p>
 
     <div class="exit-bar o" style="margin:0 0 32px">
@@ -1015,8 +1016,8 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
 
   <!-- ---- MEETING PREP ---- -->
   <div class="pb-pane" id="pb-prep">
-    <div class="eyebrow g">Playbook 02 — before any client meeting</div>
-    <h3 class="sub-h3" style="font-size:26px">Meeting preparation</h3>
+    <div class="eyebrow g">Job 2 — before every client meeting, without exception</div>
+    <h3 class="sub-h3" style="font-size:26px">Prepare for a meeting</h3>
     <p class="q-b" style="max-width:720px; margin-bottom:28px">Meetings with Matt are scarce and should be spent on judgment, not briefing. If a system holds the answer, retrieve it yourself. Walk in able to answer these seven questions, and the meeting becomes a decision rather than a status recap.</p>
     <div id="prep-list"></div>
     <div class="ws-bar">
@@ -1051,8 +1052,37 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
 
   <!-- ---- CALIBRATION ---- -->
   <div class="pb-pane" id="pb-cal">
-    <div class="eyebrow g">Playbook 03 — after any significant meeting</div>
-    <h3 class="sub-h3" style="font-size:26px">Post-meeting calibration</h3>
+    <div class="eyebrow g">Job 3 — same day, every time</div>
+    <h3 class="sub-h3" style="font-size:26px">After the meeting</h3>
+    <p class="q-b" style="max-width:720px; margin-bottom:28px">Two halves, and they are not the same work. <strong>First you log it</strong> — the commitments made in that room are now real, and they exist nowhere but your memory until the record catches up. <strong>Then you calibrate it</strong> — which is how you learn to read a client situation the way the leadership layer does. Do the logging the same day. Do the calibration before you hear anyone else's read.</p>
+
+    <div class="eyebrow" style="margin-bottom:14px">Half one — log it, same day</div>
+    <p class="q-b" style="max-width:720px; margin-bottom:20px">Run Engagement Sync. It pulls the meeting record alongside the project space and recent mail and chat, then walks you through three confirmation moments — existing task updates, then new tasks and subtask promotions, then attachments. You approve each set. It ends by drafting the client-facing follow-up for you to send.</p>
+    <div class="two-col" style="gap:26px; margin-bottom:36px">
+      <div>
+        <div class="dt-lab">What has to land in the record</div>
+        <ul class="arrows">
+          <li><strong>Every commitment made in the room</strong> — what, who, by when. A commitment that lives only in your memory is one you will discover the hard way.</li>
+          <li><strong>Decisions, with who made them.</strong> Not just the topic that was discussed.</li>
+          <li><strong>Anything that changed</strong> — scope, dates, ownership, or the client's position on something they'd already agreed.</li>
+          <li><strong>Blockers, named</strong>, with whose blocker it is: ours, theirs, or a third party's.</li>
+          <li><strong>Your time</strong>, against the right list — the retainer or project list for meeting time, the engagement task list for task time. Check which exists rather than assuming.</li>
+          <li><strong>The follow-up itself</strong>, sent by you after you've read it. No skill sends client communication.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="dt-lab">How to log it well</div>
+        <ul class="arrows">
+          <li><strong>Comment before you change status.</strong> Comments preserve why; status changes close doors. The project record is a roadmap, not a changelog.</li>
+          <li><strong>Update before you add.</strong> Check whether a task already covers the topic — a second task on the same thread splits the history.</li>
+          <li><strong>Never infer a due date.</strong> If it wasn't said, ask. An invented date becomes a commitment nobody made.</li>
+          <li><strong>Log while it's fresh.</strong> Tomorrow you'll remember the decisions and lose the reasoning, and the reasoning is the half that matters later.</li>
+          <li><strong>Read what Sync proposes.</strong> Approving a set blind defeats the point of there being three gates.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:14px">Half two — calibrate it</div>
     <p class="q-b" style="max-width:720px; margin-bottom:28px">This is <strong>the primary mechanism</strong> for transferring judgment without hours of formal training. Answer all eleven before you hear Matt's read. Then compare. Where you agree, no discussion is needed — that's already calibrated. Where you differ, that difference is the entire agenda, and it's worth more than any walkthrough either of you could plan.</p>
     <div id="cal-worksheet"></div>
     <div class="ws-bar">
@@ -1066,40 +1096,117 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
     </div>
   </div>
 
-  <!-- ---- HANDOFF ---- -->
-  <div class="pb-pane" id="pb-hand">
-    <div class="eyebrow g">Playbook 04</div>
-    <h3 class="sub-h3" style="font-size:26px">What a good handoff looks like</h3>
-    <p class="q-b" style="max-width:720px; margin-bottom:28px">You are on the receiving end of several handoffs right now, which makes this the best possible moment to learn what a good one contains. Everything you wished had been written down is the specification.</p>
-    <div class="two-col">
+  <!-- ---- SCOPE NEW WORK ---- -->
+  <div class="pb-pane" id="pb-scope">
+    <div class="eyebrow g">Job 4 — any new scope, no exceptions</div>
+    <h3 class="sub-h3" style="font-size:26px">Scope new work through the Cartographer</h3>
+    <p class="q-b" style="max-width:760px; margin-bottom:28px">This is the one rule on this page with no judgment call attached. <strong>New scope goes through the Cartographer.</strong> Not a conversation, not a hunch formed on a call, not a proposal written from what the client said they wanted — a run of the skill, producing an audit and a structured recommendation.</p>
+
+    <div class="exit-bar" style="margin:0 0 32px">
+      <div class="exit-label">Why it is the rule and not a preference</div>
+      <p class="exit-txt">The Cartographer is what <strong>determines the structure of the engagement.</strong> Its scope ledger carries one row per scope unit, each with a horizon assignment and a project-or-retainer call, and that ledger is the bridge between what the audit found and the commercial motion — it is what the pricing engine consumes. Scope that never went through it is scope with no traceable derivation, which means that when the client challenges it in month three, nobody can reconstruct how we arrived at it. That is the failure this rule exists to prevent.</p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:32px">
       <div class="panel good">
-        <div class="eyebrow g">A complete handoff carries</div>
+        <div class="eyebrow g">Run it when</div>
         <ul class="arrows">
-          <li><strong>The contracted scope</strong>, and any scope-change document, findable in the client's Drive folder — not described from memory.</li>
-          <li><strong>A dated commitment record</strong> — what was promised, when, by whom, and in what forum.</li>
-          <li><strong>The current build state per workstream</strong>, scored honestly, with the evidence that produced each score.</li>
-          <li><strong>Classified gaps with named owners</strong> — Zipcio-owed and client-owed kept separate.</li>
-          <li><strong>Named blind spots</strong> with the access dependency that would clear each one. A named blind spot is far stronger than a vague open question.</li>
-          <li><strong>The current automation workbook</strong>, reflecting what's actually built.</li>
-          <li><strong>Stakeholders and their positions</strong> — who signs off, who resists, who has been burned before.</li>
-          <li><strong>The next three actions</strong>, sequenced, with the first one startable today.</li>
-        </ul>
-      </div>
-      <div class="panel warn">
-        <div class="eyebrow o">What makes a handoff worthless</div>
-        <ul class="arrows x">
-          <li>A task list with no intent behind it.</li>
-          <li>A status colour with no evidence anchor.</li>
-          <li>"Ask [departed person]" as the answer to anything.</li>
-          <li>Scope described in conversation but never reconciled against the signed document.</li>
-          <li>Gaps that are actually un-investigated questions dressed as findings.</li>
-          <li>A build assessment written without opening the portal.</li>
+          <li><strong>Before a kickoff</strong>, or late in the sales process once portal access has been granted.</li>
+          <li><strong>New scope appears on an account you already own</strong> — an expansion, a new workstream, a renewal that adds work.</li>
+          <li><strong>Anyone asks what an engagement should cost or how long it should take.</strong> That answer comes out of a ledger, not out of your head.</li>
         </ul>
         <div class="dt" style="margin-top:20px">
-          <div class="dt-lab">Your standing obligation</div>
-          <p class="dt-txt">When you finish reconstructing an inherited account, the reconstruction <em>is</em> the handoff document you wished you'd received. Write it into the engagement's own records — workbook, ClickUp, Drive — rather than leaving it in a chat session. The next person inheriting it is possibly still you, three months from now, with no memory of the detail.</p>
+          <div class="dt-lab">How to invoke it</div>
+          <p class="dt-txt">Slash command only — <span class="mono" style="color:var(--eg)">/cartographer</span>. It will not trigger from conversation, deliberately. Expect ten to thirty minutes depending on portal complexity.</p>
         </div>
       </div>
+      <div class="panel warn">
+        <div class="eyebrow o">Do not run it when</div>
+        <ul class="arrows x">
+          <li><strong>The work is already sold and in delivery.</strong> That is the Strategist's lane, and a mid-engagement audit dressed as a scoping run wastes everyone's time.</li>
+          <li><strong>You are reconstructing an inherited build.</strong> That is Job 1 and the Archaeologist — different question, different evidence.</li>
+          <li><strong>You want a quick portal lookup.</strong> That is the Runner.</li>
+        </ul>
+        <div class="dt" style="margin-top:20px">
+          <div class="dt-lab">The accounts you are inheriting</div>
+          <p class="dt-txt">Most of them <strong>predate the Cartographer</strong> — scoped before it existed, so there is no audit and no ledger behind them. Do not retro-fit a run onto delivery already in flight. Reconstruct instead, and reserve the Cartographer for the moment new scope actually appears.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow">What it needs from you before it starts</div>
+    <ul class="arrows stack-32" style="margin-bottom:32px">
+      <li><strong>The client name</strong>, confirmed rather than assumed.</li>
+      <li><strong>A read-scoped Private App token</strong> for their portal — CRM objects, properties, workflows, lists, forms, campaigns, sequences, pipelines, owners, reporting. Never stored beyond the session.</li>
+      <li><strong>Which Hubs and which tier.</strong> Ask the client directly. This gates feature-adoption scoring and dimension selection, and it is <em>not</em> inferable from the portal.</li>
+      <li><strong>Connectors verified.</strong> The client HubSpot access layer, the meeting record and Notion are blocking — missing any one and the run stops rather than producing a partial audit. Mail, Drive and deck generation are non-blocking, with the limitation named.</li>
+    </ul>
+
+    <div class="eyebrow">The shape of a run — and where you are needed</div>
+    <div class="flow-chain" style="margin-bottom:16px">
+      <div class="fc-step">
+        <div class="fc-n">1–2</div>
+        <div class="fc-h">Context, then census</div>
+        <p class="fc-b">All sales and relationship context first, so every portal finding gets read through the lens of what the client actually said. Then a full inventory — assets, record volumes, portal age in practice, resolved-outcome counts, bulk-import evidence.</p>
+      </div>
+      <div class="fc-step">
+        <div class="fc-n">2b</div>
+        <div class="fc-h">Classify the portal — the hinge</div>
+        <p class="fc-b">Asset density against outcome-data viability. This single classification sets the evidence ceiling, whether driver analysis runs at all, and <strong>which engagement horizons are honest to offer.</strong> Everything downstream routes off it.</p>
+      </div>
+      <div class="fc-step">
+        <div class="fc-n">3</div>
+        <div class="fc-h">Gate one — you confirm</div>
+        <p class="fc-b">The scoring dimensions, agreed with you before any analysis runs. This is a real decision, not a formality: the dimensions determine what the audit is capable of concluding.</p>
+      </div>
+      <div class="fc-step">
+        <div class="fc-n">4–7</div>
+        <div class="fc-h">Scan, score, synthesise, QA</div>
+        <p class="fc-b">Evidence gathered per dimension against a ladder, with the Hound and the Analyst pulled in where warranted. Then dimension scores, a thesis, the scope ledger, and a QA pass over figures and contradictions.</p>
+      </div>
+      <div class="fc-step">
+        <div class="fc-n">8</div>
+        <div class="fc-h">Gate two — you confirm</div>
+        <p class="fc-b">The deliverable package, before anything is generated. Read it against what the client actually needs to see rather than accepting the full set by default.</p>
+      </div>
+    </div>
+    <p class="q-note" style="margin-bottom:36px">Two human gates, and that is intentional — more would slow it to uselessness, fewer would let it produce a confident audit you never agreed to. Both gates are yours.</p>
+
+    <div class="eyebrow">What comes out, and where it lives</div>
+    <div class="deliv-grid stack-32" style="margin-bottom:24px">
+      <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Portal Audit PDF</div><p class="deliv-d">What their portal actually is, scored, against what they said they need.</p></div>
+      <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Engagement Recommendations PDF</div><p class="deliv-d">The commercial argument. This is the document the engagement gets sold on.</p></div>
+      <div class="deliv"><div class="deliv-w int">Internal</div><div class="deliv-n">SA narrative doc</div><p class="deliv-d">The interpretive story of the engagement. Yours. Never shared.</p></div>
+      <div class="deliv"><div class="deliv-w int">Internal</div><div class="deliv-n">Scope Ledger</div><p class="deliv-d">One row per scope unit, with horizon and project-versus-retainer. Feeds pricing. Never shared with the prospect.</p></div>
+      <div class="deliv"><div class="deliv-w int">Internal</div><div class="deliv-n">Evidence workbook</div><p class="deliv-d">Conditional on the portal state. The receipts behind the scores.</p></div>
+      <div class="deliv"><div class="deliv-w int">SA tool</div><div class="deliv-n">Deck</div><p class="deliv-d">For walking the client through it live.</p></div>
+    </div>
+    <ul class="arrows" style="margin-bottom:36px">
+      <li><strong>Naming is fixed:</strong> <span class="mono" style="color:var(--eg)">[Deliverable Type] | [Client Name] | [YYYY-MM-DD]</span>.</li>
+      <li><strong>Internal files go in an <span class="mono">/Internal</span> subfolder</strong> of the client's Drive folder — never the shared root. "Nobody will share it" is not access control.</li>
+      <li><strong>The ledger carries no prices.</strong> No hours, no rates, no totals, ever. The pricing engine owns the rate card and does the multiplication.</li>
+    </ul>
+
+    <div class="exit-bar o">
+      <div class="exit-label">The standing rule on client-facing work</div>
+      <p class="exit-txt"><strong>Everything client-facing traces back to the recommendation the close produced.</strong> For newly scoped work that is the Engagement Recommendations document — the audit's closing argument is what the engagement was sold on, and every deliverable, timeline and build decision after it should be recognisably downstream of it. For work already in delivery it is the session close package: the recap, the architecture brief, and the narrative agreed at the end of the session. Either way you are not inventing the client's picture of the work in a meeting or in an email. You are executing against a recommendation that already exists, and when it needs to change, the recommendation gets updated first — not quietly diverged from.</p>
+    </div>
+
+    <div class="stack-32 panel warn">
+      <div class="eyebrow o">Two ways a run goes wrong</div>
+      <ul class="arrows o">
+        <li><strong>Running the wrong analytical shape for the portal in front of you.</strong> A twelve-year-old asset-dense portal and an eight-month-old sparse one demand different audits. Force one shape onto the other and you get either thin findings or manufactured ones.</li>
+        <li><strong>Presenting a lower grade of evidence in the register of a higher one.</strong> Inference written as measurement is the fastest way to lose the client's trust in Zipcio — and yours in the skill. Watch for it in the draft and downgrade the language.</li>
+      </ul>
+      <div class="dt" style="margin-top:20px">
+        <div class="dt-lab">One more thing worth knowing</div>
+        <p class="dt-txt">A portal that has been recently migrated can show thousands of deals with imported close dates and backfilled stages — enough records to run a regression and produce a confident, wrong answer. <strong>Migration artifacts are a harder failure than sparse data</strong>, because sparse data announces itself. If a portal looks suspiciously data-rich for its age, say so out loud before anyone scores it.</p>
+      </div>
+    </div>
+
+    <div class="stack-32 exit-bar">
+      <div class="exit-label">Exercise — do this in your first two weeks</div>
+      <p class="exit-txt">Take an account you have inherited that has no Cartographer audit behind it. Working only from what you can retrieve, write down what its scope ledger <em>would</em> have said: the scope units, a horizon for each, and a project-or-retainer call. Then mark every row Attributed, Inferred or Unattributed. The proportion that comes out Inferred or Unattributed is a direct measure of how much of that engagement is running on assumption — and it is the most useful thing you can bring to a calibration session about that account.</p>
     </div>
   </div>
 </section>
@@ -1247,6 +1354,9 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   <div class="sec-kicker">Delivery</div>
   <h2 class="sec-h2">What we send, and what "client-ready" means</h2>
   <p class="sec-intro">Zipcio's output is the product. A correct build that's documented badly reads to the client as a build they can't trust — and the documentation is frequently the only artifact the executive sponsor ever sees. Assume the person reading your deliverable was not on the call.</p>
+  <div class="rule-strip" style="margin:0 0 48px">
+    <div class="rs">Client-facing work traces back to <em>the recommendation the close produced</em> — the Engagement Recommendations for newly scoped work, the session close package for work in delivery. You execute against a recommendation that already exists. When it needs to change, you update it rather than diverging from it quietly.</div>
+  </div>
 
   <div class="eyebrow">The standard categories</div>
   <div class="deliv-grid stack-32">
@@ -1415,7 +1525,8 @@ var PHASES = [
       'The skill catalog in practice: routing, expected output, and where each one stops.',
       'Approval mechanics — batched write groups, previews, and what "no writes before approval" means operationally.',
       'The deliverable standard, by producing one rather than reading about it.',
-      'How the engagement record, the project record, and the artifact folder are supposed to agree — and what it means when they do not.'
+      'How the engagement record, the project record, and the artifact folder are supposed to agree — and what it means when they do not.',
+      'The four jobs in the Playbooks section, in order: get up to speed, prepare, log and calibrate, scope. Almost everything this month is one of those four.'
     ],
     do:[
       'Work Labs 03 through 08 in the demo portal before you touch a client portal — names lie, abandonment triage, built-dark scoring, fill rates, and your first approved write.',
@@ -1444,7 +1555,8 @@ var PHASES = [
       'Run the post-meeting calibration set after every significant meeting. Send it to Matt before the debrief.',
       'For one live situation, write two viable architectures and argue for one. Include what you would explicitly not build.',
       'Take one client ask and recommend against AI where a process or native-platform answer is stronger. Defend it.',
-      'Draft one escalation using the internal comms standard — even if you end up not needing to send it.'
+      'Draft one escalation using the internal comms standard — even if you end up not needing to send it.',
+      'Run the Cartographer end to end on a real scoping question, and own both confirmation gates yourself. Then write the scope ledger you would have expected for one inherited account that never had one.'
     ],
     meet:'Debriefs anchored on the deltas in your calibration answers. Shorter and more valuable than a walkthrough, and the only meeting format on this ramp that is genuinely irreplaceable.',
     exit:'Your read of a client situation matches Matt’s on the substance most of the time, and where it does not, the disagreement is substantive rather than a gap in context.',
@@ -1475,7 +1587,7 @@ var PHASES = [
 --------------------------------------------------------- */
 var INTENTS = [
   { v:'Prepare for a client meeting', d:'Playbooks → Meeting prep', h:'#playbooks', pane:'pb-prep' },
-  { v:'Understand an account I just inherited', d:'Playbooks → Account reconstruction', h:'#playbooks', pane:'pb-recon' },
+  { v:'Get up to speed on an account', d:'Playbooks → Job 1', h:'#playbooks', pane:'pb-recon' },
   { v:'Choose the right Claude Skill', d:'Skill catalog', h:'#skills' },
   { v:'Work in a client HubSpot portal', d:'Access layer', h:'#mcp' },
   { v:'Practise on something I cannot break', d:'The lab — demo portal exercises', h:'#lab' },
@@ -1488,8 +1600,9 @@ var INTENTS = [
   { v:'Work out whether this is mine to decide', d:'Judgment → Decision rights', h:'#decide' },
   { v:'Escalate something to Matt', d:'Judgment → Escalation', h:'#decide' },
   { v:'Document work I just finished', d:'Delivery → Where work lives', h:'#delivery' },
-  { v:'Debrief a meeting I just left', d:'Playbooks → Calibration', h:'#playbooks', pane:'pb-cal' },
-  { v:'Hand an account to someone else', d:'Playbooks → Handoff standard', h:'#playbooks', pane:'pb-hand' },
+  { v:'Log what came out of a meeting', d:'Playbooks → Job 3', h:'#playbooks', pane:'pb-cal' },
+  { v:'Debrief a meeting I just left', d:'Playbooks → Job 3, calibration', h:'#playbooks', pane:'pb-cal' },
+  { v:'Scope a new piece of work', d:'Playbooks → Scope new work', h:'#playbooks', pane:'pb-scope' },
   { v:'Know what I should be doing this week', d:'30-Day Ramp', h:'#ramp' }
 ];
 
@@ -1763,9 +1876,9 @@ var SKILLS = [
   replaces:'Replaces an opinion about what matters, asserted confidently in a client meeting.'
 },
 {
-  slug:'cartographer', nick:'The Cartographer', family:'Pre-engagement', tier:'situational', write:'read',
-  badges:[['badge-n','Situational'],['badge-r','Read-only'],['badge-n','Slash-only']],
-  does:'Pre-engagement intelligence. Reads an unfamiliar portal in full, reads the sales context, and produces a scored audit plus a commercially framed recommendation — what you are walking into and what it is worth.',
+  slug:'cartographer', nick:'The Cartographer', family:'Scoping · Pre-engagement', tier:'core', write:'read',
+  badges:[['badge-g','Core'],['badge-r','Read-only'],['badge-n','Slash-only']],
+  does:'Pre-engagement intelligence, and the only sanctioned way to scope new work. Reads an unfamiliar portal in full, reads the sales context, and produces a scored audit plus the commercially framed recommendation the engagement gets sold on. Its scope ledger is what determines the engagement structure.',
   when:'Before a kickoff, or late in the sales process once portal access is granted. Slash-command invocation only; it will not trigger from conversation.',
   notwhen:'Active delivery work, mid-engagement changes, one-off lookups, or reconstructing a build Zipcio already owns (Archaeologist).',
   needs:'Portal access and the sales context. Invoke it deliberately.',
@@ -2168,6 +2281,9 @@ var REF = [
   { q:'Is this mine to decide?', a:'Depends on the client and the workstream, not your tenure. Level 2 proposes, Level 3 executes an agreed design, Level 4 owns the normal case. You will sit at different levels simultaneously — name yours when it is ambiguous.', t:'decision rights levels own execute recommend mine decide' },
   { q:'How do I prepare for a client meeting?', a:'Seven questions: why the meeting, what happened last time, what was promised, what needs deciding, what to inspect first, what your role is, and what you would recommend right now. Retrieve the first six; only the seventh is yours alone.', t:'meeting prep prepare before call seven questions' },
   { q:'What do I do after a significant meeting?', a:'Run the eleven calibration questions and send them to Matt <strong>before</strong> the debrief. He marks where his answer differs, and the difference becomes the agenda. This is the main judgment-transfer mechanism on the ramp.', t:'after meeting calibration debrief eleven questions judgment delta' },
+  { q:'Where does new scope come from?', a:'A <strong>Cartographer</strong> run. Its scope ledger — one row per scope unit, with a horizon and a project-or-retainer call — is what determines the engagement structure and what pricing consumes. Scope invented in a conversation has no traceable derivation and cannot be defended later.', t:'scope new work cartographer ledger pricing structure engagement' },
+  { q:'What should client-facing work be based on?', a:'<strong>The recommendation the close produced.</strong> For newly scoped work that is the Engagement Recommendations document; for work in delivery it is the session close package. You execute against a recommendation that already exists — and when it needs to change, you update it rather than quietly diverging.', t:'client facing deliverable recommendations close engagement session package' },
+  { q:'The account I inherited has no audit behind it. Now what?', a:'Most inherited accounts predate the Cartographer. Do not retro-fit a run onto delivery in flight — <strong>reconstruct instead</strong> (Job 1), and reserve the Cartographer for the moment genuinely new scope appears.', t:'inherited no audit predate cartographer legacy reconstruct retrofit' },
   { q:'Which skill do I use?', a:'Ask which specialist owns the class of work, not whether AI can do it. Full session with a deliverable is the Strategist; one entity’s dependencies is the Hound; an inherited build is the Archaeologist; one fast thing is a Runner; synthesis after a call is Engagement Sync.', t:'skill choose routing which specialist lane' },
   { q:'Can I trust a workflow’s name?', a:'No. Names lie. A workflow named for one behavior may do something else entirely. Open the definition and read the actions before reporting on behavior.', t:'workflow name behavior inference lie definition actions' },
   { q:'Something in the record contradicts what I found. Now what?', a:'Surface it early and loudly — including when the thing being contradicted is something Zipcio itself asserted. That contradiction is usually the most valuable output of a reconstruction.', t:'contradiction correction record wrong surface loudly' },
