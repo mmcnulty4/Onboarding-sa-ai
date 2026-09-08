@@ -437,6 +437,31 @@ nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(10,10
 .esc-h { font-size:15px; font-weight:700; margin-bottom:11px; line-height:1.3; }
 
 /* =========================================================
+   13b. AWAITING-INPUT SLOTS + PRODUCT PATH
+   ========================================================= */
+.slot { background:rgba(255,107,43,.04); border:1px dashed rgba(255,107,43,.42); border-radius:2px; padding:18px 22px; margin-top:12px; }
+.slot-tag { font-family:'Space Mono',monospace; font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--so); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.slot-tag::before { content:'○'; font-size:9px; }
+.slot-txt { font-size:12.5px; color:var(--muted2); line-height:1.65; }
+.slot-txt strong { color:var(--off-white); }
+.slot.inline { margin:0; }
+
+.path { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+.path-cell { background:var(--mg2); padding:24px 22px; border-top:2px solid var(--border2); }
+.path-cell.s1 { border-top-color:rgba(240,237,232,.28); }
+.path-cell.s2 { border-top-color:var(--so); }
+.path-cell.s3 { border-top-color:#c6dcff; }
+.path-cell.s4 { border-top-color:var(--eg); }
+.path-n { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:.1em; margin-bottom:9px; }
+.path-cell.s4 .path-n { color:var(--eg); }
+.path-cell.s2 .path-n { color:var(--so); }
+.path-h { font-size:16px; font-weight:800; letter-spacing:-.02em; margin-bottom:9px; line-height:1.2; }
+.path-b { font-size:12px; color:var(--muted2); line-height:1.65; }
+.path-b strong { color:var(--off-white); }
+
+.sell-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+
+/* =========================================================
    14. DELIVERY STANDARD
    ========================================================= */
 .deliv-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(206px,1fr)); gap:2px; }
@@ -478,6 +503,8 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   .sec, .hero { padding-left:56px; padding-right:56px; }
   .div, footer { margin-left:0; padding-left:56px; padding-right:56px; }
   .cc-grid, .map-wrap, .two-col, .conn-grid { grid-template-columns:1fr; }
+  .path { grid-template-columns:1fr 1fr; }
+  .sell-grid { grid-template-columns:1fr; }
   .lab-grid { grid-template-columns:1fr; }
   .val-grid { grid-template-columns:1fr; }
   .ramp-arc { grid-template-columns:1fr 1fr; }
@@ -504,6 +531,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   .phase-strip { grid-template-columns:1fr 1fr; }
   .ramp-arc { grid-template-columns:1fr; }
   .sk-grid, .router, .ref-list, .esc-grid, .deliv-grid { grid-template-columns:1fr; }
+  .path, .sell-grid { grid-template-columns:1fr; }
   .lab-grid { grid-template-columns:1fr; }
   .lab, .lab-rules { padding:22px; }
   .dr-rail { grid-template-columns:1fr 1fr; }
@@ -540,6 +568,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#command" data-section="command">Command</a></li>
+    <li><a href="#product" data-section="product">What We Sell</a></li>
     <li><a href="#ramp" data-section="ramp">30-Day Ramp</a></li>
     <li><a href="#systems" data-section="systems">Systems</a></li>
     <li><a href="#skills" data-section="skills">Skills</a></li>
@@ -597,6 +626,101 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
     </div>
   </div>
 </section>
+
+<!-- =========================
+     WHAT WE ACTUALLY SELL
+========================= -->
+<section class="sec" id="product">
+  <div class="sec-kicker">The category</div>
+  <h2 class="sec-h2">What we actually sell</h2>
+  <p class="sec-intro">AI as a service is not a bundle of automations, and it is not AI added to a CRM. It is the work of <strong>translating a company's real operating context into repeatable, governed capacity</strong> that lives inside the systems they already run.</p>
+  <p class="sec-intro" style="margin-top:-28px">That translation is the product. A client's judgment currently lives in experienced operators, chat threads, manager preferences and institutional memory — which works while humans do the work by hand, and fails the moment the business wants a system to act. Our job is to make that judgment explicit enough for a system to carry: expressed through workflows, knowledge structures, permissions, escalation rules, reporting logic and human handoffs.</p>
+
+  <div class="rule-strip" style="margin-bottom:48px">
+    <div class="rs"><em>Bespoke</em> where the business is bespoke. <em>Standardized</em> where the operating pattern repeats.</div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:48px">
+    <div class="panel warn">
+      <div class="eyebrow o">Most of the market flattens one way or the other</div>
+      <ul class="arrows o">
+        <li><strong>AI as a generic productivity layer</strong> — easy to buy, hard to operationalize. Nothing in the client's actual operating context gets touched, so nothing durable changes.</li>
+        <li><strong>Every use case as bespoke invention</strong> — impressive, and impossible to scale. Each engagement starts from zero and the practice never compounds.</li>
+      </ul>
+      <div class="dt" style="margin-top:20px">
+        <div class="dt-lab">Why the category is more useful than either</div>
+        <p class="dt-txt">Because the interesting question is never "can AI do this" — it is <strong>which parts of this business are genuinely particular, and which parts only look particular.</strong> That is an operating judgment, and it is the thing we are actually paid for.</p>
+      </div>
+    </div>
+    <div class="panel good">
+      <div class="eyebrow g">Practically, we help a client define four things</div>
+      <ul class="arrows">
+        <li><strong>What work can be delegated</strong> to a system.</li>
+        <li><strong>What judgment must stay human</strong> — and why that boundary sits where it does.</li>
+        <li><strong>What context has to be made durable</strong> so the system can act without a person re-supplying it.</li>
+        <li><strong>How the business gets visibility while the work happens</strong>, rather than after someone reconstructs it for a report.</li>
+      </ul>
+      <div class="dt" style="margin-top:20px">
+        <div class="dt-lab">Read those four again</div>
+        <p class="dt-txt">They are the spine of every scoping conversation you will have. If a proposal does not answer all four, it is not finished.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow">Where the practice is today</div>
+  <div class="sell-grid stack-32">
+    <div class="panel">
+      <div class="dt-lab">Productized — repeatable, scoped, sellable as-is</div>
+      <div class="slot"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">Which offerings are genuinely productized today.</p></div>
+    </div>
+    <div class="panel">
+      <div class="dt-lab">Emerging — the pattern is real, the packaging is not finished</div>
+      <div class="slot"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">Which patterns are proven but not yet packaged.</p></div>
+    </div>
+    <div class="panel">
+      <div class="dt-lab">Bespoke — architected per client, no reusable form yet</div>
+      <div class="slot"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">Which work is still bespoke every time.</p></div>
+    </div>
+    <div class="panel">
+      <div class="dt-lab">Where it goes next — two to four quarters</div>
+      <div class="slot"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">What the practice is trying to prove, what has to become true, and what it is deliberately <em>not</em> chasing yet. <strong>You cannot align to a direction you cannot see</strong> — and this is the one part of this site only Matt can write.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- =========================
+     THIS SITE IS A WORKED EXAMPLE
+========================= -->
+<section class="sec" id="worked-example">
+  <div class="sec-kicker">How to read this site</div>
+  <h2 class="sec-h2">This site is a <em>worked example</em></h2>
+  <p class="sec-intro">Read the rest of it twice. Once for the rules, once for the method.</p>
+  <p class="sec-intro" style="margin-top:-28px">Everything below is Zipcio's own operating judgment made explicit — <strong>the same operation we perform on client businesses, performed on ourselves.</strong> The escalation section is an escalation map: what is routine, what is exception, who owns the call, when the work stops. The five decision-rights levels are a decision inventory. Attributed / Inferred / Unattributed, the anchored 0–4 scoring, "cite it, don't copy it", the two human gates in a Cartographer run, the write posture per lane — each one is a rule that used to live in someone's head and now exists as an artifact the operating system can carry.</p>
+
+  <div class="two-col">
+    <div class="panel good">
+      <div class="eyebrow g">So when you read a rule here, read it twice</div>
+      <ul class="arrows">
+        <li><strong>What does this rule prevent?</strong> Every one of them exists because something went wrong, or would have.</li>
+        <li><strong>Where did the judgment live before it was written down?</strong> Usually in one person, which is exactly the fragility we sell against.</li>
+        <li><strong>What form did it have to take to become durable?</strong> A gate, a taxonomy, a scoring anchor, a naming convention, a posture.</li>
+        <li><strong>Could a client's business carry the same structure?</strong> That question is the job.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">The point</div>
+      <p class="dt-txt" style="font-size:13px">This site is not forty house rules to memorize. It is <strong>the reference implementation of what we sell.</strong> If you can see why each rule exists and what failure it prevents, you can run the same extraction on a client — which is the job.</p>
+      <div class="dt" style="margin-top:22px">
+        <div class="dt-lab">A useful consequence</div>
+        <p class="dt-txt">When you hit something on this site that seems arbitrary, that is a finding. Either the rule has a reason nobody wrote down — in which case it needs one — or it does not have a reason, in which case it should go. Both are worth raising. You are the first person to read this cold, and that makes you the best available test of whether it holds up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
 
 <!-- =========================
      "I NEED TO…" ROUTER
@@ -1094,6 +1218,24 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
       <div class="exit-label">How to use the delta</div>
       <p class="exit-txt">Send the completed set to Matt <strong>before</strong> the debrief, not during it. He reads it, marks the three or four places his answer differs, and the conversation starts there. A 45-minute walkthrough becomes a 15-minute argument about the parts that actually matter — and the argument is the training.</p>
     </div>
+
+    <div class="stack-64">
+      <div class="eyebrow o" style="margin-bottom:14px">Half three — the commercial set</div>
+      <h4 class="sub-h3" style="font-size:22px">Commercial calibration</h4>
+      <p class="q-b" style="max-width:760px; margin-bottom:20px">The eleven questions above calibrate how you read a client <em>situation</em>. This set calibrates how you read an <em>opportunity</em> — which is where you will sit at a lower decision-rights level for longer, and <strong>where the gap costs the most.</strong></p>
+      <p class="q-b" style="max-width:760px; margin-bottom:20px">Same mechanic: answer before you see my answer, send it before the debrief, and we spend the time only where we differ.</p>
+      <p class="q-b" style="max-width:760px; margin-bottom:24px">Run it against a real situation — an expansion signal on an account you own, a request that arrived mid-engagement, or an inherited account you are reconstructing.</p>
+      <div id="comm-worksheet"></div>
+      <div class="ws-bar">
+        <span class="ws-status" id="comm-status">Not started</span>
+        <button class="btn-sm" id="comm-copy">Copy answers</button>
+        <button class="btn-sm danger" id="comm-clear">Clear</button>
+      </div>
+      <div class="stack-32 exit-bar o">
+        <div class="exit-label">Where your answer and mine differ, that difference is the agenda</div>
+        <p class="exit-txt">Questions 6, 9 and 10 are the ones worth arguing hardest about. Six is the productization call, nine decides how the work gets structured commercially, and ten is the one most people skip — <strong>if you cannot state the strongest reason not to sell something, you have not understood it well enough to sell it.</strong></p>
+      </div>
+    </div>
   </div>
 
   <!-- ---- SCOPE NEW WORK ---- -->
@@ -1249,6 +1391,47 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   </div>
 
   <div class="stack-64">
+    <div class="sec-kicker">Productization</div>
+    <h3 class="sub-h3" style="font-size:24px">From one-off solve to product</h3>
+    <p class="sec-intro" style="margin-bottom:28px">Most of what we build starts as a specific answer to a specific client. <strong>Some of it should never be anything else.</strong> The skill is telling the difference early, because the cost of productizing the wrong thing is high and the cost of rebuilding the same thing four times is higher.</p>
+    <p class="sec-intro" style="margin-top:-16px; margin-bottom:28px">The path has four states. Know which one you are in and say so out loud.</p>
+    <div class="path">
+      <div class="path-cell s1">
+        <div class="path-n">01</div>
+        <div class="path-h">Client solve</div>
+        <p class="path-b">Built for one business, in their context, against their constraints. <strong>Most work stops here legitimately.</strong> A solve that only ever fits one client is not a failure; treating it as reusable is.</p>
+      </div>
+      <div class="path-cell s2">
+        <div class="path-n">02</div>
+        <div class="path-h">Candidate pattern</div>
+        <p class="path-b">You have built something structurally similar more than once, or you can see the second client before finishing the first. The signal is <strong>structural repetition, not topical similarity</strong> — two clients wanting "lead routing" may share nothing underneath. Flag it. Do not start building for reuse yet.</p>
+      </div>
+      <div class="path-cell s3">
+        <div class="path-n">03</div>
+        <div class="path-h">Reusable pattern</div>
+        <p class="path-b">The method is written down and <strong>someone other than the builder can run it.</strong> It has a name, a documented approach in Notion, and a stated boundary — what it covers and what it does not. Still delivered by a person exercising judgment.</p>
+      </div>
+      <div class="path-cell s4">
+        <div class="path-n">04</div>
+        <div class="path-h">Product</div>
+        <p class="path-b">Repeatable enough to scope, price, sell and deliver against a known shape. Standardized intake, evidence trail, QA gates and handoff — with the architecture still reflecting the business in front of you. <strong>Productized does not mean generic.</strong> It means the repeatable parts are repeatable so the judgment parts get the attention.</p>
+      </div>
+    </div>
+
+    <div class="stack-32 two-col">
+      <div class="panel">
+        <div class="eyebrow">What clears each gate</div>
+        <div class="slot inline"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">The bar for <strong>02 → 03</strong> and <strong>03 → 04</strong>, and who calls it. If the answer today is "you and I decide in conversation", that is what this should say — an honest informal process documented beats a formal one nobody follows.</p></div>
+      </div>
+      <div class="panel good">
+        <div class="eyebrow g">Your role in this</div>
+        <p class="dt-txt" style="font-size:13px">Finding these is <strong>not a side project you get to after the delivery work.</strong> It is a primary expectation of the role, and it is the reason you are being pointed at a portfolio of accounts rather than one.</p>
+        <p class="dt-txt" style="font-size:13px; margin-top:14px">Bring candidates as you see them, <strong>with the second instance named.</strong> A pattern proposed from one engagement is a hunch.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack-64">
     <div class="sec-kicker">Where AI creates value</div>
     <h3 class="sub-h3" style="font-size:24px">Three categories. The strongest solutions combine them.</h3>
     <div style="margin-bottom:26px"><span class="chip g">Approved operating standard</span></div>
@@ -1338,6 +1521,31 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
         </ul>
       </div>
     </div>
+    <div class="stack-64">
+      <div class="sec-kicker">The other direction</div>
+      <h3 class="sub-h3" style="font-size:24px">What you can expect from me</h3>
+      <p class="sec-intro" style="margin-bottom:28px">The rest of this site sets expectations in one direction. Here is the other.</p>
+      <div class="two-col">
+        <div class="panel">
+          <div class="dt-lab">Cadence</div>
+          <div class="slot inline"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">Standing time — how often, how long, and what it is for.</p></div>
+          <div class="dt-lab" style="margin-top:24px">Review points, not supervision</div>
+          <div class="slot inline"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">Which artifacts Matt wants to see before they go out, and at what stage. <strong>Be specific</strong> — "client-facing" is too broad to act on.</p></div>
+          <div class="dt-lab" style="margin-top:24px">Response time</div>
+          <div class="slot inline"><div class="slot-tag">Awaiting Matt</div><p class="slot-txt">What to expect on a normal question versus something blocking. A named expectation prevents both the unnecessary wait and the unnecessary ping.</p></div>
+        </div>
+        <div class="panel good">
+          <div class="eyebrow g">How we disagree</div>
+          <p class="dt-txt" style="font-size:13px">Bring the disagreement. If your read differs from mine and you can defend it, that is <strong>the highest-value thing you can put in front of me</strong> — it is either a calibration item or a place I am wrong. Neither of us learns anything from you deferring early.</p>
+          <p class="dt-txt" style="font-size:13px; margin-top:14px">Where we still differ after the argument and a call has to be made, I make it and you execute it — and <strong>if it turns out badly, that is mine.</strong></p>
+          <div class="dt" style="margin-top:24px; padding-top:22px; border-top:1px solid var(--border)">
+            <div class="dt-lab">What I will not do</div>
+            <p class="dt-txt">Be your search engine. If a system holds the answer, retrieve it. That is not a policy about my time; it is <strong>the specific dependency this ramp exists to remove.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="stack-32 panel">
       <div class="eyebrow g">How to escalate well</div>
       <p class="dt-txt">Lead with the bottom line, not the background — see the internal comms standard under <a href="#delivery" style="color:var(--eg); text-decoration:none">Delivery</a>. State the risk plainly in one sentence, what changed, the impact, the options, and your recommendation. <strong>Escalating with a recommendation attached is Level 2 done well; escalating without one is asking someone else to do your thinking.</strong> For anything that needs leadership visibility and a durable record rather than a message, the Escalation Reporter files a structured ticket in Zipcio's own portal — read its field standards before you use it the first time, because the format is opinionated on purpose.</p>
@@ -1471,12 +1679,6 @@ Ask / recommendation: <b>[specific next step, owner, timing]</b></div>
   <div class="f-count" id="ref-count"></div>
   <div class="ref-list" id="ref-list"></div>
 
-  <div class="stack-64">
-    <div class="sec-kicker orange">Honest gaps</div>
-    <h3 class="sub-h3" style="font-size:24px">Open questions — not yet documented anywhere authoritative</h3>
-    <p class="sec-intro" style="margin-bottom:28px">These are things this site could not verify against a current Zipcio source. They are listed as open rather than answered, because inventing policy is worse than naming the gap. Each one is a legitimate question to put to Matt or the delivery lead — and each one is a candidate to become documented for the next hire.</p>
-    <div id="open-q"></div>
-  </div>
 </section>
 
 <!-- =========================
@@ -1602,6 +1804,9 @@ var INTENTS = [
   { v:'Log what came out of a meeting', d:'Playbooks → Job 3', h:'#playbooks', pane:'pb-cal' },
   { v:'Debrief a meeting I just left', d:'Playbooks → Job 3, calibration', h:'#playbooks', pane:'pb-cal' },
   { v:'Scope a new piece of work', d:'Playbooks → Scope new work', h:'#playbooks', pane:'pb-scope' },
+  { v:'Explain what Zipcio actually sells', d:'What we sell', h:'#product' },
+  { v:'Work out if this should become a product', d:'Judgment → Productization', h:'#decide' },
+  { v:'Calibrate on a commercial opportunity', d:'Playbooks → Job 3, commercial set', h:'#playbooks', pane:'pb-cal' },
   { v:'Know what I should be doing this week', d:'30-Day Ramp', h:'#ramp' }
 ];
 
@@ -2240,6 +2445,20 @@ var CAL_Q = [
   'Is there a reusable pattern here? — have I now seen this twice?'
 ];
 
+var COMM_Q = [
+  'What outcome is the client actually trying to move, in one sentence?',
+  'Which rung of the ladder does this problem actually sit on — and are we being asked to solve it one rung too high?',
+  'Is this in scope, adjacent to scope, or new scope? What evidence dates that call?',
+  'Which of the three value categories does this create — time, accuracy, or new capability? Which is the strongest argument to the person who signs?',
+  'What is the honest size of that value? If the manual version costs eleven minutes a week, say so.',
+  'Is this a client solve or a candidate pattern? If candidate, where is the second instance?',
+  'What would we have to make durable — context, rules, escalation logic — for this to work after we leave?',
+  'What judgment must stay human here, and does the client agree with that boundary?',
+  'Project or retainer, and why?',
+  'What is the strongest reason not to sell this?',
+  'What is your recommendation, and what would change your mind?'
+];
+
 /* ---------------------------------------------------------
    REFERENCE INDEX
 --------------------------------------------------------- */
@@ -2275,17 +2494,6 @@ var REF = [
   { q:'Can I put client information in a microsite or dashboard?', a:'Only behind a genuine server-side authorization boundary. A discovery mechanism is not a security boundary. For a static hosted page, assume anyone with the URL can read it — which is why this site contains method only.', t:'microsite dashboard security client data static url garage boundary' }
 ];
 
-/* ---------------------------------------------------------
-   OPEN QUESTIONS — verified as undocumented
---------------------------------------------------------- */
-var OPENQ = [
-  { h:'Decision-right levels are not a formalized Zipcio standard', b:'The five levels here are a ramp construct for this onboarding, not an existing company framework. Treat the labels as shared vocabulary between you and Matt rather than as policy — and confirm the boundaries per account rather than assuming.' },
-  { h:'The Drive naming convention has drifted', b:'The intended workbook pattern is “[Client] &amp; Zipcio &gt;&gt; Documentation and Automation Log”, but real files exist with underscores and with tab-name suffixes. Consequence: always search Drive-wide by pattern rather than scoping to a folder. Whether to normalize the historical files is an open call.' },
-  { h:'No single documented escalation SLA', b:'What gets escalated is well defined. How fast a response should be expected, and what happens when the account lead is unavailable, is not written down. Ask.' },
-  { h:'Skill library is ahead of its own documentation', b:'The knowledge base field guide covers ten skills; the live library is substantially larger — reconstruction, pre-engagement audit, delivery oversight, escalation, hosted builds, and commercial tooling all post-date it. The skill files themselves are the current authority. This site reflects the files.' },
-  { h:'Client-safe deliverable exemplars are thin', b:'The quality bar is described in the skill files, but there is no curated set of sanitized exemplars a new hire can read. Building that set would remove a real chunk of ramp ambiguity — and it is the single highest-value artifact this ramp is missing.' },
-  { h:'No documented convention for where reconstruction output lands', b:'Reconstruction produces a genuinely valuable artifact. Whether it belongs in the workbook, as a document in the client folder, or as structured notes in the project record is not settled. Pick one with Matt and then make it the convention.' }
-];
 </script>
 
 <!-- =========================
@@ -2343,7 +2551,7 @@ var OPENQ = [
     function setActive(id) {
       anchors.forEach(function (a) { a.classList.toggle('active', a.dataset.section === id); });
     }
-    var ids = ['command', 'ramp', 'systems', 'skills', 'mcp', 'lab', 'playbooks', 'decide', 'delivery', 'reference'];
+    var ids = ['command', 'product', 'ramp', 'systems', 'skills', 'mcp', 'lab', 'playbooks', 'decide', 'delivery', 'reference'];
     if (!('IntersectionObserver' in window)) return;
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
@@ -2716,11 +2924,19 @@ var OPENQ = [
       c === 0 ? 'Not started' : c + ' of ' + CAL_Q.length + ' answered' + (c === CAL_Q.length ? ' — send before the debrief' : '');
   }
 
+  function refreshComm() {
+    var c = noteCount('comm', COMM_Q.length);
+    document.getElementById('comm-status').textContent =
+      c === 0 ? 'Not started' : c + ' of ' + COMM_Q.length + ' answered' + (c === COMM_Q.length ? ' — send before the debrief' : '');
+  }
+
   function initWorksheets() {
     buildWorksheet('recon-worksheet', 'recon', RECON_Q, true);
     buildWorksheet('cal-worksheet', 'cal', CAL_Q, false);
+    buildWorksheet('comm-worksheet', 'comm', COMM_Q, false);
     refreshRecon();
     refreshCal();
+    refreshComm();
 
     document.addEventListener('input', function (e) {
       var t = e.target;
@@ -2729,6 +2945,7 @@ var OPENQ = [
       saveStore();
       if (t.dataset.note.indexOf('recon-') === 0) refreshRecon();
       if (t.dataset.note.indexOf('cal-') === 0) refreshCal();
+      if (t.dataset.note.indexOf('comm-') === 0) refreshComm();
     });
 
     function copyOut(prefix, items, numbered, label) {
@@ -2767,6 +2984,16 @@ var OPENQ = [
       saveStore();
       buildWorksheet('cal-worksheet', 'cal', CAL_Q, false);
       refreshCal();
+    });
+    document.getElementById('comm-copy').addEventListener('click', function () {
+      copyOut('comm', COMM_Q, false, 'COMMERCIAL CALIBRATION — my answers before the debrief');
+    });
+    document.getElementById('comm-clear').addEventListener('click', function () {
+      if (!confirm('Clear all commercial calibration answers in this browser?')) return;
+      COMM_Q.forEach(function (_, i) { delete store.notes['comm-' + i]; });
+      saveStore();
+      buildWorksheet('comm-worksheet', 'comm', COMM_Q, false);
+      refreshComm();
     });
   }
 
@@ -2913,13 +3140,10 @@ var OPENQ = [
         ? items.map(function (r) {
             return '<div class="ref-item"><div class="ref-q">' + esc(r.q) + '</div><p class="ref-a">' + r.a + '</p></div>';
           }).join('')
-        : '<div class="ref-item"><div class="ref-q">Nothing here matches that</div><p class="ref-a">Check the open questions below — it may be genuinely undocumented, which is worth raising rather than guessing at.</p></div>';
+        : '<div class="ref-item"><div class="ref-q">Nothing here matches that</div><p class="ref-a">Search Notion for the operating noun before assuming it does not exist. If it genuinely is not written down anywhere, that is worth raising rather than guessing at — and worth writing down once it is answered.</p></div>';
     }
     input.addEventListener('input', render);
     render();
-    document.getElementById('open-q').innerHTML = OPENQ.map(function (o) {
-      return '<div class="oq"><div class="oq-h">' + esc(o.h) + '</div><p class="oq-b">' + o.b + '</p></div>';
-    }).join('');
   }
 
   /* -------------------------------------------------------
@@ -2937,8 +3161,10 @@ var OPENQ = [
       initLab();
       buildWorksheet('recon-worksheet', 'recon', RECON_Q, true);
       buildWorksheet('cal-worksheet', 'cal', CAL_Q, false);
+      buildWorksheet('comm-worksheet', 'comm', COMM_Q, false);
       refreshRecon();
       refreshCal();
+      refreshComm();
     });
   }
 
