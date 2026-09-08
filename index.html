@@ -196,10 +196,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(10,10
 
 /* generic arrow list */
 .arrows { list-style:none; display:flex; flex-direction:column; gap:8px; }
-.arrows li { font-size:12.5px; color:var(--muted2); display:flex; align-items:baseline; gap:9px; line-height:1.6; }
-.arrows li::before { content:'→'; color:var(--eg); font-size:10px; flex-shrink:0; }
-.arrows.o li::before { content:'!'; color:var(--so); font-weight:700; }
-.arrows.x li::before { content:'✕'; color:var(--so); font-size:9px; }
+.arrows li { font-size:12.5px; color:var(--muted2); line-height:1.6; position:relative; padding-left:20px; }
+.arrows li::before { content:'→'; color:var(--eg); font-size:10px; position:absolute; left:0; top:1px; }
+.arrows.o li::before { content:'!'; color:var(--so); font-weight:700; left:3px; }
+.arrows.x li::before { content:'✕'; color:var(--so); font-size:9px; top:2px; }
 .arrows li strong { color:var(--off-white); font-weight:600; }
 
 /* =========================================================
@@ -324,6 +324,26 @@ nav { position:fixed; top:0; left:0; right:0; z-index:200; background:rgba(10,10
 .tier-tbl tr:nth-child(odd) td { background:rgba(255,255,255,.018); }
 .tier-tbl td strong { color:var(--off-white); }
 .tbl-scroll { overflow-x:auto; }
+
+/* =========================================================
+   11b. LAB
+   ========================================================= */
+.lab-rules { background:var(--dg); padding:28px 32px; border-top:2px solid var(--so); margin-bottom:2px; }
+.lab-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.lab { background:var(--mg2); padding:28px; display:flex; flex-direction:column; }
+.lab-top { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:12px; }
+.lab-n { font-family:'Space Mono',monospace; font-size:11px; color:var(--eg); letter-spacing:.1em; }
+.lab-meta { display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end; }
+.lab-h { font-size:18px; font-weight:800; letter-spacing:-.02em; line-height:1.2; margin-bottom:10px; }
+.lab-why { font-size:12.5px; color:var(--muted2); line-height:1.65; margin-bottom:18px; }
+.lab-lab { font-family:'Space Mono',monospace; font-size:8.5px; color:var(--muted); letter-spacing:.13em; text-transform:uppercase; margin-bottom:9px; }
+.lab-steps { list-style:none; counter-reset:st; display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+.lab-steps li { counter-increment:st; font-size:12px; color:var(--muted2); line-height:1.6; display:flex; gap:10px; }
+.lab-steps li::before { content:counter(st); font-family:'Space Mono',monospace; font-size:9px; color:var(--eg); flex-shrink:0; padding-top:2px; }
+.lab-good { background:rgba(0,255,136,.05); border-left:2px solid var(--eg); padding:14px 16px; font-size:12px; color:var(--muted2); line-height:1.65; margin-bottom:16px; }
+.lab-good strong { color:var(--off-white); }
+.lab-done { margin-top:auto; padding-top:14px; border-top:1px solid var(--border); }
+.lab-count { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); }
 
 /* =========================================================
    12. PLAYBOOKS
@@ -458,6 +478,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   .sec, .hero { padding-left:56px; padding-right:56px; }
   .div, footer { margin-left:0; padding-left:56px; padding-right:56px; }
   .cc-grid, .map-wrap, .two-col, .conn-grid { grid-template-columns:1fr; }
+  .lab-grid { grid-template-columns:1fr; }
   .val-grid { grid-template-columns:1fr; }
   .ramp-arc { grid-template-columns:1fr 1fr; }
   .dr-rail { grid-template-columns:repeat(3,1fr); }
@@ -483,6 +504,8 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
   .phase-strip { grid-template-columns:1fr 1fr; }
   .ramp-arc { grid-template-columns:1fr; }
   .sk-grid, .router, .ref-list, .esc-grid, .deliv-grid { grid-template-columns:1fr; }
+  .lab-grid { grid-template-columns:1fr; }
+  .lab, .lab-rules { padding:22px; }
   .dr-rail { grid-template-columns:1fr 1fr; }
   .f-search { max-width:none; min-width:0; width:100%; }
   .f-group { width:100%; overflow-x:auto; }
@@ -521,6 +544,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
     <li><a href="#systems" data-section="systems">Systems</a></li>
     <li><a href="#skills" data-section="skills">Skills</a></li>
     <li><a href="#mcp" data-section="mcp">Access Layer</a></li>
+    <li><a href="#lab" data-section="lab">Lab</a></li>
     <li><a href="#playbooks" data-section="playbooks">Playbooks</a></li>
     <li><a href="#decide" data-section="decide">Judgment</a></li>
     <li><a href="#delivery" data-section="delivery">Delivery</a></li>
@@ -846,6 +870,41 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- =========================
+     LAB — HANDS-ON IN THE DEMO PORTAL
+========================= -->
+<section class="sec" id="lab">
+  <div class="sec-kicker">Hands on</div>
+  <h2 class="sec-h2">The lab</h2>
+  <p class="sec-intro">Reading about the access layer teaches you the rule. Running a real call against a real portal teaches you what it feels like when the rule is the only thing standing between you and the wrong environment. These exercises run in <strong>Zipcio's demo portal</strong> — fabricated records, no client data, nothing that matters if you break it.</p>
+  <p class="sec-intro" style="margin-top:-28px">The demo portal is genuinely messy, and that is the point. It contains enabled automation with stale names, disabled automation that was never revised, workflows called "Untitled", and a pipeline whose stage labels say one thing while their internal values say another. Every exercise below has been checked against what is actually in there.</p>
+
+  <div class="lab-rules">
+    <div class="eyebrow o">Rules of the lab</div>
+    <ul class="arrows o">
+      <li><strong>Get the demo key from Matt.</strong> It is not published on this page — a key on a page anyone can open is a key anyone can use.</li>
+      <li><strong>Read before you write.</strong> Labs 01–07 are read-only. Do those first, in order.</li>
+      <li><strong>The demo portal is shared.</strong> Other people run demos out of it. Create freely, but do not delete or disable anything you did not create.</li>
+      <li><strong>Never run a lab exercise against a client portal.</strong> Not "carefully", not "read-only just to see". The habit you want is that practice happens in the demo portal and nowhere else.</li>
+      <li><strong>Confirm the portal name on every single connection</strong>, including here. Especially here — building the reflex in a safe portal is the whole reason this lab exists.</li>
+    </ul>
+  </div>
+
+  <div class="lab-grid" id="lab-grid"></div>
+
+  <div class="ws-bar">
+    <span class="lab-count" id="lab-count">0 of 0 complete</span>
+    <button class="btn-sm danger" id="lab-clear">Reset lab progress</button>
+  </div>
+
+  <div class="stack-48 exit-bar">
+    <div class="exit-label">What the lab cannot teach you</div>
+    <p class="exit-txt">The demo portal has no engagement record behind it — no scope document, no dated commitments, no meeting history. So every finding you make in it is structurally <strong>unattributed</strong>: you can see what exists and what state it is in, but nothing explains why it was built. That is a limitation of the lab and also its most useful lesson. On a real account, the half of the picture the portal cannot give you is the half that makes the build legible — and going and getting it is the work.</p>
   </div>
 </section>
 
@@ -1342,7 +1401,7 @@ var PHASES = [
       'Confirm your access to every system on the map. Note anything missing on day one, not day five — access gaps are the most common ramp blocker and the slowest to resolve.',
       'Run the routing drill in the Skill catalog. Note any answer you disagree with.',
       'Read the internal comms standard and the deliverable never-send list.',
-      'Open one client portal through the client access layer and confirm the portal name comes back as expected. Read something. Change nothing.'
+      'Run Lab 01 and Lab 02 in the demo portal. Prove which portal you are in, and find the pipeline whose stage labels disagree with their internal values.'
     ],
     meet:'One short session with Matt: which accounts you are picking up, what level of decision right applies to each, and what he wants seen before it reaches a client. Fifteen minutes, not an hour.',
     exit:'You can state which connector to use for a given task, name the source of truth for a given question, and describe what happens if you get either wrong. You have not yet written anything to a client portal.',
@@ -1359,6 +1418,7 @@ var PHASES = [
       'How the engagement record, the project record, and the artifact folder are supposed to agree — and what it means when they do not.'
     ],
     do:[
+      'Work Labs 03 through 08 in the demo portal before you touch a client portal — names lie, abandonment triage, built-dark scoring, fill rates, and your first approved write.',
       'Reconstruct your first assigned account end to end using the playbook. Write the eight answers down.',
       'Prepare for a client meeting using the seven prep questions, and form a recommendation before the call.',
       'Take a real workstream through a full session: investigate, design, get approval, build, document.',
@@ -1418,6 +1478,7 @@ var INTENTS = [
   { v:'Understand an account I just inherited', d:'Playbooks → Account reconstruction', h:'#playbooks', pane:'pb-recon' },
   { v:'Choose the right Claude Skill', d:'Skill catalog', h:'#skills' },
   { v:'Work in a client HubSpot portal', d:'Access layer', h:'#mcp' },
+  { v:'Practise on something I cannot break', d:'The lab — demo portal exercises', h:'#lab' },
   { v:'Work out which HubSpot connection to use', d:'Systems → The connector rule', h:'#systems' },
   { v:'Find client files or meeting history', d:'Delivery → Where work lives', h:'#delivery' },
   { v:'Build or fix automation', d:'Skill catalog → Automation Strategist', h:'#skills' },
@@ -1893,6 +1954,124 @@ var DRILL = [
   { q:'“What is going on across the accounts I just picked up?”', a:'Portfolio Briefing' },
   { q:'“Leadership wants a live view of renewals, not another export.”', a:'Command Center Builder' }
 ];
+
+/* ---------------------------------------------------------
+   LAB — exercises in the Zipcio demo portal
+   Every exercise checked against actual portal contents.
+--------------------------------------------------------- */
+var LABS = [
+{
+  n:'Lab 01', h:'Prove which portal you are in', skill:'Access layer', phase:'Phase 1', mode:'read',
+  why:'The single most consequential mistake available to you in week one is doing correct work in the wrong portal. Build the reflex here, where being wrong costs nothing.',
+  steps:[
+    'Start a session with the demo key on the client HubSpot connector and ask for the portal name and account details back.',
+    'Read the confirmation. Say the portal name out loud. That is the habit.',
+    'Now ask the same question through the native HubSpot connector and compare what comes back.',
+    'Write down, in one sentence, how you would have noticed if you had the wrong one.'
+  ],
+  good:'You can state plainly that the two connectors returned <strong>different portals</strong>, and you know which is which. If they looked interchangeable to you, re-read the connector rule before doing anything else.'
+},
+{
+  n:'Lab 02', h:'Labels lie — find the mismatch', skill:'The Runner', phase:'Phase 1', mode:'read',
+  why:'Every filter, workflow condition and report you build references the internal value, not the label on screen. This portal has a live example of the gap, and it is the kind that quietly breaks a build.',
+  steps:[
+    'Pull all deal pipelines and their stages.',
+    'There are three. Find the one whose stage labels are written in renewal language.',
+    'Look at that pipeline’s internal stage IDs, not the labels.',
+    'Write the label-to-internal-value mapping out in full, then explain what breaks if someone filters on what they see on screen.'
+  ],
+  good:'You found a pipeline where a stage labelled for a <strong>verbal renewal</strong> carries the stock HubSpot internal value for a sent contract — and several others like it. The lesson you can now state from experience: <strong>confirm internal values before building any filter.</strong>'
+},
+{
+  n:'Lab 03', h:'Names lie — read the actions', skill:'The Hound', phase:'Phase 2', mode:'read',
+  why:'Reading a workflow name and reporting its behaviour is one of the three failure modes that got the reconstruction playbook written. Names assert; definitions prove.',
+  steps:[
+    'List every workflow in the portal and pick two whose names make a confident claim about what they do.',
+    'Open each definition and read the actual actions and enrollment criteria.',
+    'For each, write what the name implies and what it actually does.',
+    'Note any case where you could not tell from the definition alone, and what you would need in order to know.'
+  ],
+  good:'At least one of your two turned out to do something narrower, broader or simply other than its name implies — or you can show, action by action, that it does exactly what it claims. Either is a pass. <strong>"The name says so" is not.</strong>'
+},
+{
+  n:'Lab 04', h:'Abandonment triage', skill:'The Hound', phase:'Phase 2', mode:'read',
+  why:'Deciding what is safe to remove is a judgment call built on evidence, and this portal has the full spread of signals sitting in it.',
+  steps:[
+    'Inventory every workflow with its enabled state, creation date, last-updated date and revision count.',
+    'Flag the hard signals: never revised, never enabled, zero enrollment.',
+    'Flag the soft signals: a name carrying a legacy marker, a name referencing a campaign season two years old, a workflow literally called "Untitled".',
+    'Assign each one a status — healthy, degraded, dormant, orphaned or broken — and a safe-to-remove verdict with the evidence that produced it.'
+  ],
+  good:'You noticed the awkward cases rather than only the obvious ones: something <strong>enabled but stale</strong> is a very different risk from something disabled and forgotten, and an enabled workflow named for an old campaign is the one worth asking about. Every verdict cites its evidence.'
+},
+{
+  n:'Lab 05', h:'Score a built-dark cluster', skill:'The Archaeologist', phase:'Phase 2', mode:'read',
+  why:'Existence is not function. This is the state most often misreported in both directions, and the portal contains a textbook instance.',
+  steps:[
+    'Sort every workflow by creation timestamp.',
+    'Find the group created within seconds of each other, spanning several different objects, none enabled, none revised since.',
+    'Score that group on the five-state readiness rubric and justify the score.',
+    'Then state what it would take to move it to live verified, and who owns each step.'
+  ],
+  good:'You scored it <strong>Scaffolded or Built Dark, not done</strong> — real work, zero business outcome — and you anchored the score to the enabled state and revision count rather than to the fact that the assets exist.'
+},
+{
+  n:'Lab 06', h:'Cluster the portal into workstreams', skill:'The Archaeologist', phase:'Phase 3', mode:'read',
+  why:'Clusters announce themselves through creation-date proximity, shared author and subject coherence. Naming them by business outcome rather than by object is the habit that makes a reconstruction readable.',
+  steps:[
+    'Group all automation in the portal into the outcomes it appears to be trying to produce.',
+    'Use creation-date proximity, the object each one runs on, and the naming convention as your evidence.',
+    'Name each cluster by the business outcome — not by the HubSpot object it happens to use.',
+    'Mark every cluster Attributed, Inferred or Unattributed, and say why.'
+  ],
+  good:'Your cluster names read like outcomes a client would recognise, and — because this portal has no engagement record behind it — <strong>every single cluster is marked Unattributed.</strong> If you wrote a rationale for why a cluster exists, you invented it. That is the trap this exercise is for.'
+},
+{
+  n:'Lab 07', h:'Check fill before you trust a field', skill:'The Runner / The Hound', phase:'Phase 2', mode:'read',
+  why:'A property that exists and a property that carries data are different things, and automation built on the second assumption fails silently.',
+  steps:[
+    'Pick an enabled workflow and identify every property its conditions depend on.',
+    'Check the usage and fill rate on each of those properties.',
+    'Decide whether that workflow can actually do anything today, and say what the evidence is.',
+    'Write the finding as one sentence you would be willing to put in front of a client.'
+  ],
+  good:'You can say whether the automation is <strong>functional or merely present</strong>, with a fill rate or a record count behind the claim. A score without an anchor is an opinion.'
+},
+{
+  n:'Lab 08', h:'Your first write, through the gate', skill:'The Runner', phase:'Phase 2', mode:'write',
+  why:'You need to have felt the approval mechanic before you meet it in a client session with the account lead watching.',
+  steps:[
+    'Ask the Runner to create one property, described in plain language — let it choose the type and field type.',
+    'Read the confirmation table before you approve. Check the internal name it generated, not just the label.',
+    'Approve it, then immediately check its usage.',
+    'Prefix the name so it is obviously yours, and note that you now own cleaning it up.'
+  ],
+  good:'The property exists at <strong>0% fill</strong> — which means you have just personally created a built-dark asset, on purpose, and you understand why that state is so easy to misreport as finished work.'
+},
+{
+  n:'Lab 09', h:'Argue against building it', skill:'Judgment', phase:'Phase 3', mode:'read',
+  why:'Recommending against AI is a senior move and it needs practice, because the instinct under commercial pressure runs the other way.',
+  steps:[
+    'Find the enabled cluster in this portal that scores or classifies customer health.',
+    'Read what it actually does and how it reaches its result.',
+    'Run the AI decision ladder against it: would process, native functionality or deterministic automation do this job?',
+    'Write a recommendation with a clear position, the value category if AI is warranted, and what you would explicitly not build.'
+  ],
+  good:'You reached a position and can defend it either way. If your answer is that deterministic scoring is the stronger recommendation, <strong>you said so plainly</strong> rather than quietly not proposing the alternative.'
+},
+{
+  n:'Lab 10', h:'Reconstruct the whole portal', skill:'The Archaeologist', phase:'Phase 3', mode:'read',
+  why:'The capstone. Run the full reconstruction method against a portal where half the evidence deliberately does not exist, so you learn what an honest gap looks like.',
+  steps:[
+    'Run the portal census: every workflow, property, pipeline and object, with creation dates and authors.',
+    'Cluster into workstreams and score each on the readiness rubric.',
+    'Classify every gap, naming an owner for each, and name the blind spots with the access dependency that would clear them.',
+    'Produce a sequenced plan splitting work that could start now from work blocked on a decision.',
+    'Then answer the eight reconstruction questions and take your write-up to Matt.'
+  ],
+  good:'Your write-up is <strong>honest about what it cannot know.</strong> No fabricated gaps, no inference dressed as fact, no confident arrows between systems you never verified. A sparse map that is true beats a tidy one that guesses — and this is the exercise where Matt can see which one you produce.'
+}
+];
 </script>
 
 <script>
@@ -2065,7 +2244,7 @@ var OPENQ = [
     function setActive(id) {
       anchors.forEach(function (a) { a.classList.toggle('active', a.dataset.section === id); });
     }
-    var ids = ['command', 'ramp', 'systems', 'skills', 'mcp', 'playbooks', 'decide', 'delivery', 'reference'];
+    var ids = ['command', 'ramp', 'systems', 'skills', 'mcp', 'lab', 'playbooks', 'decide', 'delivery', 'reference'];
     if (!('IntersectionObserver' in window)) return;
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
@@ -2200,6 +2379,7 @@ var OPENQ = [
     saveStore();
     if (/^p\d/.test(id)) refreshProgress();
     if (id.indexOf('prep-') === 0) refreshPrep();
+    if (id.indexOf('lab-') === 0) refreshLab();
   }
   function initChecks() {
     document.addEventListener('click', function (e) {
@@ -2338,6 +2518,50 @@ var OPENQ = [
       if (!b) return;
       b.textContent = DRILL[+b.dataset.drill].a;
       b.classList.add('shown');
+    });
+  }
+
+  /* -------------------------------------------------------
+     LAB
+  ------------------------------------------------------- */
+  function refreshLab() {
+    var done = LABS.filter(function (_, i) { return store.checks['lab-' + i]; }).length;
+    var el = document.getElementById('lab-count');
+    if (el) {
+      el.textContent = done + ' of ' + LABS.length + ' complete' +
+        (done === LABS.length ? ' — take Lab 10 to Matt' : '');
+    }
+  }
+
+  function initLab() {
+    document.getElementById('lab-grid').innerHTML = LABS.map(function (l, i) {
+      var modeBadge = l.mode === 'write'
+        ? '<span class="badge badge-o">Writes</span>'
+        : '<span class="badge badge-r">Read-only</span>';
+      return '<div class="lab">' +
+        '<div class="lab-top"><div class="lab-n">' + esc(l.n) + '</div>' +
+          '<div class="lab-meta"><span class="badge badge-n">' + esc(l.phase) + '</span>' +
+          '<span class="badge badge-g">' + esc(l.skill) + '</span>' + modeBadge + '</div></div>' +
+        '<div class="lab-h">' + esc(l.h) + '</div>' +
+        '<p class="lab-why">' + esc(l.why) + '</p>' +
+        '<div class="lab-lab">Do this</div>' +
+        '<ol class="lab-steps">' + l.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' +
+        '<div class="lab-lab">What good looks like</div>' +
+        '<div class="lab-good">' + l.good + '</div>' +
+        '<div class="lab-done"><ul class="ck">' + ckItem('lab-' + i, 'Done — and I could explain it to someone else') + '</ul></div>' +
+        '</div>';
+    }).join('');
+    refreshLab();
+
+    document.getElementById('lab-clear').addEventListener('click', function () {
+      if (!confirm('Reset lab progress in this browser?')) return;
+      LABS.forEach(function (_, i) { delete store.checks['lab-' + i]; });
+      saveStore();
+      document.querySelectorAll('#lab-grid .ck-item').forEach(function (li) {
+        li.classList.remove('on');
+        li.setAttribute('aria-checked', 'false');
+      });
+      refreshLab();
     });
   }
 
@@ -2607,6 +2831,7 @@ var OPENQ = [
       renderPhases();
       refreshProgress();
       initPrep();
+      initLab();
       buildWorksheet('recon-worksheet', 'recon', RECON_Q, true);
       buildWorksheet('cal-worksheet', 'cal', CAL_Q, false);
       refreshRecon();
@@ -2628,6 +2853,7 @@ var OPENQ = [
     initSkills();
     initTree();
     initDrill();
+    initLab();
     initPanes();
     initWorksheets();
     initPrep();
