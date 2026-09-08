@@ -866,7 +866,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
           <tr><td><strong>Read-only, always</strong></td><td>The Hound, The Archaeologist, The Cartographer, Portfolio Briefing, The Analyst</td><td>Safe to run without approval. Findings that need action hand back to you or to the Strategist — they never act themselves.</td></tr>
           <tr><td><strong>Writes, batched approval</strong></td><td>Automation Strategist, The Librarian</td><td>Planned creates and updates are grouped by function and presented for a single approval per group. No writes land before you approve the group.</td></tr>
           <tr><td><strong>Writes, preview then go</strong></td><td>HubSpot Runner, ClickUp Runner, Engagement Sync, Escalation Reporter</td><td>Shows a confirmation table or one-line preview, then writes on your approval. Fast by design — which is exactly why the portal or space confirm matters.</td></tr>
-          <tr><td><strong>Writes outside the CRM</strong></td><td>Diagram Builder (Miro), Mockup Generator (files), Command Center Builder (deploys), document skills</td><td>Nothing touches a client CRM, but output can reach a client. The approval gate is <strong>you</strong>, at the point of sending.</td></tr>
+          <tr><td><strong>Writes outside the CRM</strong></td><td>Diagram Builder (Miro), Mockup Generator (files), document skills</td><td>Nothing touches a client CRM, but output can reach a client. The approval gate is <strong>you</strong>, at the point of sending.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1369,7 +1369,6 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--border); display:fle
     <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">UI mockups</div><p class="deliv-d">Pixel-accurate renders of the future state, using the client's real configuration — never placeholder data.</p></div>
     <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Record layout specification</div><p class="deliv-d">Self-contained enough that whoever picks it up can execute without additional design thinking.</p></div>
     <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Analysis output</div><p class="deliv-d">Ranked drivers, what was tested and didn't matter, model fit, and honest data-quality caveats. Framed as association, never causation.</p></div>
-    <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Dashboards and command centers</div><p class="deliv-d">Hosted surfaces reading live CRM data server-side. Credentials never reach the browser.</p></div>
     <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Status and update messages</div><p class="deliv-d">Always drafted for your review and sent by a human. No skill sends client communication directly.</p></div>
     <div class="deliv"><div class="deliv-w">Client-facing</div><div class="deliv-n">Enablement and training material</div><p class="deliv-d">What the client's own team needs to run the thing after we leave. The most under-produced category we have.</p></div>
   </div>
@@ -1665,11 +1664,11 @@ var SYSTEMS = [
     not:'Not a place to paste protected source material. Cite the commitment with its date and speaker; never bulk-copy a transcript into an artifact.',
     sot:'Nothing. The artifact is downstream of the systems that hold the facts.',
     open:'At session close, once the work is done and the narrative is agreed.' },
-  { id:'vercel', lane:'output', name:'Hosted surfaces (Vercel)', role:'Microsites and dashboards',
-    forr:'Command centers and dashboards reading live CRM data server-side, and static internal microsites like this one. One project per surface.',
+  { id:'vercel', lane:'output', name:'Hosted surfaces (Vercel)', role:'Internal microsites',
+    forr:'Static internal microsites like this one — enablement references, explainers, and internal tools. One Vercel project per surface, single file, no build step.',
     not:'Not a place for anything confidential unless there is a genuine server-side authorization boundary. A discovery mechanism is not a security boundary — assume anyone with the URL can read a static site.',
-    sot:'Nothing. Hosted surfaces render other systems’ data; they never become the record.',
-    open:'When people need a surface rather than a document — recurring, multi-user, or live data.' }
+    sot:'Nothing. A hosted page renders other systems’ data; it never becomes the record.',
+    open:'When an internal audience needs a navigable surface rather than a document — a reference people return to, not a one-off read.' }
 ];
 </script>
 
@@ -1908,22 +1907,6 @@ var SKILLS = [
   replaces:'Replaces asking three people what is going on.'
 },
 {
-  slug:'command-center-builder', nick:'Command Center Builder', family:'Build · Hosted', tier:'situational', write:'write',
-  badges:[['badge-n','Situational'],['badge-o','Deploys']],
-  does:'Builds and deploys a live client dashboard on the house stack, reading a HubSpot private-app token server-side. Exec command centers, pipeline and forecast boards, renewals, delivery and ops boards, funnel views.',
-  when:'A client needs a live surface rather than a document — recurring, multi-user, or genuinely live data. Also to extend an existing build with a new board, object, filter, or write-back.',
-  notwhen:'A one-off answer. That is analysis, not a dashboard, and a dashboard nobody opens twice is worse than an email.',
-  needs:'The client, the data the board should show, and a scoped token. Start from the bundled starter rather than hand-rolling.',
-  systems:'Client HubSpot server-side, deployed to hosting.',
-  output:'A deployed dashboard with KPI tiles, charts, and filterable record tables. Optionally hosted natively on the client’s own CMS.',
-  approval:'Deployment is a client-visible act. Confirm the surface, the audience, and the hosting choice before it ships.',
-  fail:'Any credential reaching the browser. Tokens stay server-side, without exception. Also: building a board against a data foundation too weak to support it — the dashboard will faithfully display the confusion.',
-  judgment:'Whether a live surface changes a behavior. If nobody has a reason to open it on a Tuesday, it is decoration.',
-  example:'“The client wants leadership visibility on renewals — build a command center rather than another weekly export.”',
-  related:['The Strategist','The Analyst'],
-  replaces:'Replaces a recurring manual export and the meeting that exists to explain it.'
-},
-{
   slug:'partnership-meeting', nick:'Partnership Meeting', family:'Commercial', tier:'situational', write:'write',
   badges:[['badge-n','Situational'],['badge-n','Deck output']],
   does:'Prepares and populates partnership review decks from an engagement name and the available records — reviews, business reviews, renewals, expansion conversations, end-of-engagement meetings.',
@@ -1952,7 +1935,7 @@ var SKILLS = [
   fail:'A technically correct document that looks careless. Visual quality is read as a proxy for build quality, fairly or not.',
   judgment:'Whether a document is the right artifact at all. A great deal of what gets written as a document should have been a diagram, a dashboard, or three sentences in a message.',
   example:'“Turn the audit findings into a client-ready PDF with a cover page.”',
-  related:['The Strategist','Command Center Builder'],
+  related:['The Strategist','The Cartographer'],
   replaces:'Replaces formatting by hand and getting it slightly wrong.'
 },
 
@@ -2065,7 +2048,7 @@ var DRILL = [
   { q:'“The client has paused the workstream pending legal review.”', a:'Escalation Reporter' },
   { q:'“Portal access came through and kickoff is Thursday.”', a:'The Cartographer (slash-invoked)' },
   { q:'“What is going on across the accounts I just picked up?”', a:'Portfolio Briefing' },
-  { q:'“Leadership wants a live view of renewals, not another export.”', a:'Command Center Builder' }
+  { q:'“Which fields predict whether a renewal closes?”', a:'The Analyst' }
 ];
 
 /* ---------------------------------------------------------
@@ -2572,6 +2555,8 @@ var OPENQ = [
       '</div></div>';
   }
 
+  var TIER_ORDER = { core: 0, situational: 1, awareness: 2 };
+
   function renderSkills() {
     var q = filt.q.toLowerCase();
     var list = SKILLS.filter(function (s) {
@@ -2581,6 +2566,8 @@ var OPENQ = [
       var hay = [s.nick, s.slug, s.family, s.does, s.when, s.notwhen, s.systems, s.output, s.example]
         .concat(s.related || []).join(' ').toLowerCase();
       return hay.indexOf(q) !== -1;
+    }).sort(function (a, b) {
+      return (TIER_ORDER[a.tier] - TIER_ORDER[b.tier]) || (SKILLS.indexOf(a) - SKILLS.indexOf(b));
     });
     document.getElementById('sk-count').textContent =
       list.length + ' of ' + SKILLS.length + ' skills' +
