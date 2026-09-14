@@ -153,7 +153,7 @@ nav {
 /* =========================================================
    4. HERO
    ========================================================= */
-.hero { padding:44px 80px 56px; position:relative; overflow:hidden; background:var(--canvas); border-bottom:1px solid var(--line-2); }
+.hero { padding:calc(var(--nav-h) + 40px) 80px 56px; position:relative; overflow:hidden; background:var(--canvas); border-bottom:1px solid var(--line-2); }
 .hero::after {
   content:''; position:absolute; right:-40px; top:0; bottom:0; width:46%;
   background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -592,7 +592,7 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--line-2); display:fle
   .nav-links a.active { padding-left:14px; background:none; box-shadow:none; }
   .sec, .hero { padding-left:20px; padding-right:20px; }
   .sec { padding-top:52px; padding-bottom:52px; }
-  .hero { padding-top:36px; padding-bottom:40px; }
+  .hero { padding-top:calc(var(--nav-h) + 26px); padding-bottom:40px; }
   .hero::after { display:none; }
   .div, footer { padding-left:20px; padding-right:20px; }
   .cc-panel, .map-board, .map-detail, .panel, .tree, .drill, .pb-pane, .evalr, .dr-pane, .lab, .lab-rules { padding:22px; }
@@ -656,10 +656,6 @@ footer { padding:34px 80px 44px; border-top:1px solid var(--line-2); display:fle
 <!-- =========================
      HERO
 ========================= -->
-<div class="tpl-banner">
-  <div class="tpl-banner-tag">Template — not a live ramp</div>
-  <p class="tpl-banner-txt">Generic Zipcio Delivery onboarding. Before handing this to a hire, fill the eight <strong>Awaiting input</strong> slots, replace &ldquo;your account lead&rdquo; with the named lead, choose which of the two ramp shapes is running, and rewrite <em>What you can expect from your account lead</em> in that lead&rsquo;s own words. Everything else — systems map, skills, access layer, lab, playbooks, judgment, delivery — is role-generic and needs no edit.</p>
-</div>
 <header class="hero" id="command">
   <div class="hero-kicker">Zipcio Delivery &nbsp;//&nbsp; {{role}} &nbsp;//&nbsp; {{pod}}</div>
   <h1 class="hero-h1">Delivery Team<em>Onboarding</em></h1>
